@@ -1,5 +1,5 @@
-@import 'styles/variables.scss';
-@import 'styles/mixins.scss';
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 .post {
   @include max-width(small);
@@ -8,26 +8,34 @@
   flex-direction: column;
 
   .heading {
-    max-width: 60rem;
-    align-self: center;
-    text-align: center;
+    @include max-width(large);
+    align-self: flex-start;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 4rem;
+    padding: 0rem;
 
     h1 {
       margin-bottom: 1rem;
+      font-size: 4.2rem;
+      line-height: 4.8rem;
     }
 
     p {
       margin-bottom: 2.5rem;
+    }
+
+    .author {
+      margin-bottom: 20px;
     }
   }
 
   .content {
     .image {
       margin-bottom: 4rem;
+      display: none;
 
       img {
         max-width: 100%;
@@ -48,7 +56,8 @@
       height: auto;
       display: block;
       text-align: center;
-      margin: 2rem auto;
+      margin: 2rem 0rem;
+      width: 50%;
     }
   }
 }

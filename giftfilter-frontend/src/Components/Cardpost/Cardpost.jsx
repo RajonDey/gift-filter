@@ -21,10 +21,14 @@ const Cardpost = ({ post, author }) => {
   return (
     <div className={styles.post}>
       <div className={styles.image}>
-        <Image {...imageProps} alt={title} />
+        <Link href={`/post/${slug.current}`}>
+          <Image {...imageProps} alt={title} />
+        </Link>
       </div>
       <div className={styles.content}>
-        <h2 className="h3">{title}</h2>
+        <Link href={`/post/${slug.current}`}>
+          <h2 className="h3">{title}</h2>
+        </Link>
         <p>{short_text}</p>
         <div className={styles.footer}>
           <Author author={getAuthor} date={publishedAt} />

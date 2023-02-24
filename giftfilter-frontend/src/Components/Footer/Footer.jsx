@@ -1,15 +1,16 @@
-import Logo from 'src/UI/Logo/Logo';
-import styles from './Footer.module.scss';
-import { AiFillInstagram } from 'react-icons/ai';
-import { IoLogoWhatsapp } from 'react-icons/io';
-import { MdEmail } from 'react-icons/md';
-import { BsTelegram } from 'react-icons/bs';
+import Logo from "src/UI/Logo/Logo";
+import styles from "./Footer.module.scss";
+import Link from "next/link";
+import { RiInstagramFill } from "react-icons/ri";
+import { BsPinterest } from "react-icons/bs";
+import { FaTiktok } from "react-icons/fa";
+import { BsFacebook } from "react-icons/bs";
 
 const social = [
-  { component: <AiFillInstagram />, url: '#' },
-  { component: <IoLogoWhatsapp />, url: '#' },
-  { component: <MdEmail />, url: '#' },
-  { component: <BsTelegram />, url: '#' },
+  { component: <RiInstagramFill />, url: "#" },
+  { component: <BsPinterest />, url: "#" },
+  { component: <FaTiktok />, url: "#" },
+  { component: <BsFacebook />, url: "#" },
 ];
 
 const Footer = () => {
@@ -20,17 +21,34 @@ const Footer = () => {
   ));
 
   return (
-    <footer className={styles['footer-wrapper']}>
+    <footer className={styles["footer-wrapper"]}>
       <div className={styles.footer}>
         <div className={styles.content}>
           <Logo />
-          <p>Compartilhando conhecimento sobre o mundo de tecnologia.</p>
+          <p>
+            Find the perfect gift for every occasion with Giftlawn's curated
+            selection of thoughtful and personalized presents.
+          </p>
           <div className={styles.social}>{renderSocial}</div>
         </div>
-        <span className={styles.copy}>
-          © Minimal Blog - Todos os direitos reservados.
-        </span>
+        <div className={styles.menu}>
+          <ul>
+            <li>
+              <Link href="/about-us">About US</Link>
+            </li>
+            <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link href="/terms-policies">Terms & Policies</Link>
+            </li>
+            <li>
+              <Link href="/sitemap">Sitemap</Link>
+            </li>
+          </ul>
+        </div>
       </div>
+      <p className={styles.copy}>© 2023, Giftlawn. All Rights Reserved.</p>
     </footer>
   );
 };

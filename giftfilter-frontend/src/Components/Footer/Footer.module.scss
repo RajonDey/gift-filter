@@ -1,5 +1,5 @@
-@import 'styles/variables.scss';
-@import 'styles/mixins.scss';
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 .footer-wrapper {
   padding-top: 8rem;
@@ -9,11 +9,12 @@
   .footer {
     @include max-width(large);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
 
     .content {
       margin-bottom: 6rem;
-      max-width: 25rem;
+      max-width: 50rem;
 
       p {
         margin: 1rem 0;
@@ -35,9 +36,25 @@
       }
     }
 
-    .copy {
-      align-self: center;
-      font-size: 1.4rem;
+    .menu {
+      margin-top: 20px;
+      li {
+        list-style: none;
+        margin-bottom: 6px;
+        a {
+          text-decoration: none;
+          color: $gray;
+          font-size: 1.4rem;
+          &:hover {
+            color: $black;
+          }
+        }
+      }
     }
+  }
+
+  .copy {
+    text-align: center;
+    font-size: 1.4rem;
   }
 }

@@ -43,7 +43,7 @@ export default function Home({ posts, author }) {
       <h1>All Articles</h1>
       <div>{renderPosts}</div>
       {searchFor !== null && foundPosts.length === 0 && (
-        <Error text="Oops! Nenhum artigo foi encontrado." />
+        <Error text="Oops! No articles were found." />
       )}
       {!disablePagination && (
         <div className={styles.pagination}>

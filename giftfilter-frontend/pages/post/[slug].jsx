@@ -1,9 +1,9 @@
-import client from 'src/sanity';
-import Author from 'src/UI/Author/Author';
-import styles from 'styles/Post.module.scss';
-import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
-import { PortableText } from '@portabletext/react';
+import client from "src/sanity";
+import Author from "src/UI/Author/Author";
+import styles from "styles/Post.module.scss";
+import Image from "next/image";
+import { useNextSanityImage } from "next-sanity-image";
+import { PortableText } from "@portabletext/react";
 
 const Post = ({ post, author }) => {
   const {
@@ -24,8 +24,8 @@ const Post = ({ post, author }) => {
         if (!value.asset._ref) return null;
         return (
           <Image
-            alt={title || 'minimal blog'}
-            loading='lazy'
+            alt={title || "minimal blog"}
+            loading="lazy"
             {...useNextSanityImage(client, value)}
           />
         );
@@ -36,9 +36,11 @@ const Post = ({ post, author }) => {
   return (
     <section className={styles.post}>
       <div className={styles.heading}>
+        <div className={styles.author}>
+          <Author author={getAuthor} date={publishedAt} />
+        </div>
         <h1>{title}</h1>
-        <p>{subtitle}</p>
-        <Author author={getAuthor} date={publishedAt} />
+        {/* <p>{subtitle}</p> */}
       </div>
       <article className={styles.content}>
         <div className={styles.image}>
@@ -63,7 +65,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const { slug = '' } = context.params;
+  const { slug = "" } = context.params;
 
   const query = `*[_type == "post" && slug.current == "${slug}"][0]`;
   const post = await client.fetch(query);

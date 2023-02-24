@@ -1,9 +1,9 @@
-import styles from './Bar.module.scss';
+import styles from "./Bar.module.scss";
 
 const Bar = () => {
   return (
     <section className={styles.bar}>
-      <span>Novos artigos todas as terças!</span>
+      <span>any offer or announcement will show from this bar!</span>
     </section>
   );
 };

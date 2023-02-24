@@ -1,5 +1,5 @@
-@import 'styles/variables.scss';
-@import 'styles/mixins.scss';
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 .heading {
   @include max-width(large);
@@ -7,6 +7,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: $marginBottom;
+  margin-top: 20px;
 
   @include device(tablet) {
     flex-direction: column;
