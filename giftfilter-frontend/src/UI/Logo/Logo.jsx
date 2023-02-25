@@ -1,10 +1,14 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
 
 const Logo = () => {
   return (
-    <Link href='/'>
-      <Image src='/logo.svg' alt='minimal blog' width={209} height={48} />
+    <Link href="/">
+      <img
+        src="https://i.postimg.cc/cCBWjgzp/image-1-removebg-preview.png"
+        alt="Gift Lawn"
+        width={150}
+        height={60}
+      />
     </Link>
   );
 };
