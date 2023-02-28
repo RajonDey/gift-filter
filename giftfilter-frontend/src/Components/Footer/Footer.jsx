@@ -34,7 +34,7 @@ const Footer = () => {
         <div className={styles.menu}>
           <ul>
             <li>
-              <Link href="/about-us">About US</Link>
+              <Link href="/about">About US</Link>
             </li>
             <li>
               <Link href="/blog">Blog</Link>
