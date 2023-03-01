@@ -1,0 +1,40 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.page {
+  @include max-width(small);
+  margin-bottom: $marginBottom;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .curatorsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .curator {
+      width: 45%;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 30px;
+      img {
+        width: 100%;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 10px #ccc;
+      }
+      h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
