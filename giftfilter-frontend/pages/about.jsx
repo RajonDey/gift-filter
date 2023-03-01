@@ -9,7 +9,10 @@ const About = () => {
       </Head>
       <section className={styles.page}>
         <h1>About Us</h1>
-
+        <p className={styles.headline}>
+          Find the perfect gift for every occasion with Giftlawn's curated
+          selection of thoughtful and personalized presents.
+        </p>
         <h2>Our Mission</h2>
         <p>
           At Giftlawn, our mission is to help you find the perfect gift for
