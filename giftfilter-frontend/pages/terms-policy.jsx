@@ -19,11 +19,65 @@ const About = () => {
 
         <h2>Privacy Policy</h2>
         <p>
-          Please refer to our <a href="privacy-policy">Privacy Policy</a> for
-          information about how we collect, use, and protect your personal
-          information.
+          Please refer to our Privacy Policy for information about how we
+          collect, use, and protect your personal information.
         </p>
+        <details>
+          <summary>Privacy Policy</summary>
+          <br />
+          <p>
+            At Giftlawn, we are committed to protecting your privacy and
+            personal information. We will never share or sell your personal
+            information to third parties unless required by law.
+          </p>
 
+          <h2>Information We Collect</h2>
+          <p>
+            We may collect personal information such as your name, email
+            address, and shipping address when you place an order or sign up for
+            our newsletter. We may also collect non-personal information such as
+            your IP address and browser type.
+          </p>
+
+          <h2>How We Use Your Information</h2>
+          <p>
+            We use your personal information to process your orders, provide
+            customer support, and send you marketing communications if you have
+            opted-in. We may also use non-personal information for analytics and
+            website improvements.
+          </p>
+
+          <h2>Cookies</h2>
+          <p>
+            We use cookies to personalize your experience on our website and
+            improve our services. You may disable cookies in your browser
+            settings, but this may limit some functionality on our website.
+          </p>
+
+          <h2>Security</h2>
+          <p>
+            We take reasonable measures to protect your personal information
+            from unauthorized access, disclosure, or misuse. However, no
+            transmission of data over the internet is completely secure, so we
+            cannot guarantee absolute security.
+          </p>
+
+          <h2>Changes to This Policy</h2>
+          <p>
+            We may update this privacy policy from time to time. Any changes
+            will be reflected on this page, and we encourage you to review this
+            policy periodically.
+          </p>
+
+          <h2>Contact Us</h2>
+          <p>
+            If you have any questions or concerns about our privacy policy,
+            please contact us at privacy@giftlawn.com.
+          </p>
+          <br />
+          <hr />
+        </details>
+        <br />
         <h2>Intellectual Property</h2>
         <p>
           All content on our website, including but not limited to text, images,
