@@ -5,6 +5,13 @@ import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { PortableText } from "@portabletext/react";
 
+import React from 'react';
+
+const HighlightDecorator = (props) => {
+    return <span style={{backgroundColor: '#E23E57', padding: '5px', color:'white', borderRadius:'5px'}}>{props.children}</span>
+};
+
+
 const Post = ({ post, author }) => {
   const {
     title,
@@ -31,6 +38,9 @@ const Post = ({ post, author }) => {
         );
       },
     },
+    marks: {
+      highlight:HighlightDecorator
+    },
   };
 
   return (
@@ -46,7 +56,13 @@ const Post = ({ post, author }) => {
         <div className={styles.image}>
           <Image {...imageProps} alt={title} />
         </div>
-        <PortableText value={body} components={ptComponents} />
+        <PortableText
+          value={body}
+          components={ptComponents}
+          decorators={[
+            { strategy: "highlight", component: HighlightDecorator },
+          ]}
+        />
       </article>
     </section>
   );
