@@ -42,6 +42,15 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'link',
+          type: 'url',
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
     }),
     defineField({
       name: 'publishedAt',

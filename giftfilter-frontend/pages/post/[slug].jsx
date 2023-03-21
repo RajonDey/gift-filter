@@ -5,12 +5,24 @@ import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { PortableText } from "@portabletext/react";
 
-import React from 'react';
+import React from "react";
+import Link from "next/link";
 
 const HighlightDecorator = (props) => {
-    return <span style={{backgroundColor: '#E23E57', padding: '5px', color:'white', borderRadius:'5px'}}>{props.children}</span>
+  return (
+    <a
+      style={{
+        backgroundColor: "#bd1e26",
+        padding: "8px 20px",
+        color: "white",
+        borderRadius: "5px",
+      }}
+      target="_blank"
+    >
+      {props.children}
+    </a>
+  );
 };
-
 
 const Post = ({ post, author }) => {
   const {
@@ -30,16 +42,18 @@ const Post = ({ post, author }) => {
       image: ({ value }) => {
         if (!value.asset._ref) return null;
         return (
-          <Image
-            alt={title || "minimal blog"}
-            loading="lazy"
-            {...useNextSanityImage(client, value)}
-          />
+          <a href={body[21].link} target="_blank" rel="noopener noreferrer">
+            <Image
+              alt={title || "minimal blog"}
+              loading="lazy"
+              {...useNextSanityImage(client, value)}
+            />
+          </a>
         );
       },
     },
     marks: {
-      highlight:HighlightDecorator
+      highlight: HighlightDecorator,
     },
   };
 
