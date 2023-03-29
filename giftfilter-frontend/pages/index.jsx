@@ -4,7 +4,12 @@ import client from "src/sanity";
 import { useRouter } from "next/router";
 import Error from "src/UI/Error/Error";
 
+import React, { useState } from "react";
+import Loader from "./Loader";
+
 export default function Home({ posts, author }) {
+  const [loading, setLoading] = useState(true);
+
   const router = useRouter();
 
   // Filter Posts
@@ -42,6 +47,7 @@ export default function Home({ posts, author }) {
     <section className={styles.page}>
       <h1>All Articles</h1>
       <div>{renderPosts}</div>
+      {/* {loading ? <Loader /> : <div>{renderPosts}</div>} */}
       {searchFor !== null && foundPosts.length === 0 && (
         <Error text="Oops! No articles were found." />
       )}

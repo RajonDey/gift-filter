@@ -10,17 +10,16 @@ import Link from "next/link";
 
 const HighlightDecorator = (props) => {
   return (
-    <a
+    <span
       style={{
         backgroundColor: "#bd1e26",
         padding: "8px 20px",
         color: "white",
         borderRadius: "5px",
       }}
-      target="_blank"
     >
       {props.children}
-    </a>
+    </span>
   );
 };
 
@@ -54,6 +53,22 @@ const Post = ({ post, author }) => {
     },
     marks: {
       highlight: HighlightDecorator,
+      internalLink: ({ value, children }) => {
+        const { slug = {} } = value;
+        const href = `/${slug.current}`;
+        return <a href={href}>{children}</a>;
+      },
+      link: ({ value, children }) => {
+        // Read https://css-tricks.com/use-target_blank/
+        const { blank, href } = value;
+        return blank ? (
+          <a href={href} target="_blank" rel="noopener">
+            {children}
+          </a>
+        ) : (
+          <a href={href}>{children}</a>
+        );
+      },
     },
   };
 

@@ -24,9 +24,18 @@
   }
 
   .image {
+    height: 200px;
+    width: 250px;
+    object-fit: contain;
+    background: #fafbfc;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     img {
-      max-width: 20rem;
-      height: 20rem;
+      max-width: 250px;
+      height: auto;
+      width: 250px;
 
       @include device(tablet) {
         max-width: 100%;
