@@ -47,24 +47,25 @@ export default defineType({
             title: 'Highlight',
             value: 'highlight',
             icon: HighlightIcon,
-            component: HighlightDecorator
-          }
+            component: HighlightDecorator,
+          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            title: 'URL',
             name: 'link',
             type: 'object',
+            title: 'External link',
             fields: [
               {
-                title: 'URL',
                 name: 'href',
                 type: 'url',
+                title: 'URL',
               },
               {
                 title: 'Open in new tab',
                 name: 'blank',
+                description: 'Read https://css-tricks.com/use-target_blank/',
                 type: 'boolean',
               },
             ],
@@ -88,7 +89,6 @@ export default defineType({
           },
         ],
       },
-      
     }),
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
@@ -96,6 +96,25 @@ export default defineType({
     defineArrayMember({
       type: 'image',
       options: {hotspot: true},
+      fields: [
+        {
+          name: 'link',
+          type: 'url',
+          options: {
+            isHighlighted: true,
+          },
+        },
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Caption',
+        },
+        {
+          name: 'attribution',
+          type: 'string',
+          title: 'Attribution',
+        },
+      ],
     }),
   ],
 })

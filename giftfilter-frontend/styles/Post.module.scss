@@ -44,11 +44,28 @@
     }
 
     :is(h1, h2, h3, h4, h5, h6) {
-      margin: 2rem 0 1rem 0;
+      margin: 20px 0 20px;
+      padding: 20px 0px 0;
     }
 
-    ul {
+    p {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    a span:hover {
+      background: #ea0909;
+    }
+
+    ul,
+    ol {
       margin: 2rem 0 2rem 4rem;
+      li {
+        line-height: 3rem;
+      }
     }
 
     img {
@@ -57,7 +74,19 @@
       display: block;
       text-align: center;
       margin: 2rem 0rem;
+    }
+
+    h3 {
+      margin: 40px 0 20px;
+      padding: 40px 0px 0;
+      clear: both;
+    }
+    h3 + a img {
       width: 50%;
+      height: auto;
+      float: left;
+      margin: 5px 20px 40px 0;
+      object-fit: contain;
     }
   }
 }

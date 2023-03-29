@@ -5,6 +5,24 @@ import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { PortableText } from "@portabletext/react";
 
+import React from "react";
+import Link from "next/link";
+
+const HighlightDecorator = (props) => {
+  return (
+    <span
+      style={{
+        backgroundColor: "#bd1e26",
+        padding: "8px 20px",
+        color: "white",
+        borderRadius: "5px",
+      }}
+    >
+      {props.children}
+    </span>
+  );
+};
+
 const Post = ({ post, author }) => {
   const {
     title,
@@ -23,11 +41,32 @@ const Post = ({ post, author }) => {
       image: ({ value }) => {
         if (!value.asset._ref) return null;
         return (
-          <Image
-            alt={title || "minimal blog"}
-            loading="lazy"
-            {...useNextSanityImage(client, value)}
-          />
+          <a href={body[21].link} target="_blank" rel="noopener noreferrer">
+            <Image
+              alt={title || "minimal blog"}
+              loading="lazy"
+              {...useNextSanityImage(client, value)}
+            />
+          </a>
+        );
+      },
+    },
+    marks: {
+      highlight: HighlightDecorator,
+      internalLink: ({ value, children }) => {
+        const { slug = {} } = value;
+        const href = `/${slug.current}`;
+        return <a href={href}>{children}</a>;
+      },
+      link: ({ value, children }) => {
+        // Read https://css-tricks.com/use-target_blank/
+        const { blank, href } = value;
+        return blank ? (
+          <a href={href} target="_blank" rel="noopener">
+            {children}
+          </a>
+        ) : (
+          <a href={href}>{children}</a>
         );
       },
     },
@@ -46,7 +85,13 @@ const Post = ({ post, author }) => {
         <div className={styles.image}>
           <Image {...imageProps} alt={title} />
         </div>
-        <PortableText value={body} components={ptComponents} />
+        <PortableText
+          value={body}
+          components={ptComponents}
+          decorators={[
+            { strategy: "highlight", component: HighlightDecorator },
+          ]}
+        />
       </article>
     </section>
   );
