@@ -21,7 +21,8 @@ const Cardpost = ({ post, author }) => {
   return (
     <div className={styles.post}>
       <div className={styles.image}>
-        <Link href={`/post/${slug.current}`}>
+        {/* <Link href={`/post/${slug.current}`}> */}
+        <Link href={`/post/}`}>
           <Image {...imageProps} alt={title} />
         </Link>
       </div>

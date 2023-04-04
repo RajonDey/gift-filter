@@ -81,12 +81,16 @@
       padding: 40px 0px 0;
       clear: both;
     }
+    h3 + p + a + img,
     h3 + a img {
       width: 50%;
       height: 270px;
       float: left;
       margin: 5px 20px 40px 0;
       object-fit: contain;
+    }
+    h2 {
+      clear: both;
     }
   }
 }
